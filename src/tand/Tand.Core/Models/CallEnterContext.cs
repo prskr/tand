@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Tand.Core.Models;
 
-namespace Tand.Core
+namespace Tand.Core.Models
 {
     public readonly struct CallEnterContext<T>
     {

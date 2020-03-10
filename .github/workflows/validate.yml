@@ -1,0 +1,26 @@
+name: Validate
+
+on:
+  push:
+    branches: [ '**' ]
+  pull_request:
+    branches: [ '**' ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1.4.0
+      with:
+        dotnet-version: 3.1.101
+        source-url: https://nuget.pkg.github.com/baez90/index.json
+      env:
+        NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    - name: Build with dotnet
+      run: dotnet build --configuration Release
+      working-directory: ./src/tand/
+    - name: Run tests
+      run: dotnet test --configuration Release --no-build
+      working-directory: ./src/tand/

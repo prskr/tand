@@ -1,16 +1,11 @@
-name: .NET Core
-
+name: Publish
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
+    tags:
+      - '**'
 jobs:
-  build:
-
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
@@ -20,9 +15,6 @@ jobs:
         source-url: https://nuget.pkg.github.com/baez90/index.json
       env:
         NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-    - name: Build with dotnet
-      run: dotnet build --configuration Release
-      working-directory: ./src/tand/
     - name: Pack for deploying package
       run: dotnet pack --configuration Release
       working-directory: ./src/tand/

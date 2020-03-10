@@ -1,5 +1,6 @@
 using System;
 using Tand.Core;
+using Tand.Core.Models;
 
 namespace Tand.Extensions.DependencyInjection
 {
