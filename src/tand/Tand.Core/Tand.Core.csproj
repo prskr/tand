@@ -1,7 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <PackageId>Tand.Core</PackageId>
+    <RepositoryUrl>https://github.com/baez90/tand</RepositoryUrl>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <Version>0.0.1</Version>
     <LangVersion>8</LangVersion>
     <Nullable>enable</Nullable>
   </PropertyGroup>
