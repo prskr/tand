@@ -1,4 +1,5 @@
 using System;
+using Tand.Core.Api;
 using Tand.Core.Models;
 
 namespace Tand.Core.Tests

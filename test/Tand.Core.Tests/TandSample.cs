@@ -1,3 +1,5 @@
+using Tand.Core.Api;
+
 namespace Tand.Core.Tests
 {
 
@@ -11,9 +13,7 @@ namespace Tand.Core.Tests
     {
 
         private int _counter;
-        
-        public string ContextSample { get; set; }
-        
+
         public int LogMyParams(string s, int i)
         {
             return ++_counter;

@@ -1,6 +1,6 @@
 using Tand.Core.Models;
 
-namespace Tand.Core
+namespace Tand.Core.Api
 {
     public interface ITandTarget<T>
     {

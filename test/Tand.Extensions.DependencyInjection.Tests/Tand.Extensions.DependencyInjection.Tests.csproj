@@ -15,7 +15,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Tand.Extensions.DependencyInjection\Tand.Extensions.DependencyInjection.csproj" />
+      <ProjectReference Include="..\..\src\Tand.Extensions.DependencyInjection\Tand.Extensions.DependencyInjection.csproj" />
     </ItemGroup>
 
 </Project>

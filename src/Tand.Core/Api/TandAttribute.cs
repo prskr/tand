@@ -1,6 +1,6 @@
 using System;
 
-namespace Tand.Core
+namespace Tand.Core.Api
 {
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
     public class TandAttribute : Attribute

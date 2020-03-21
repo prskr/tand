@@ -2,7 +2,9 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Reflection;
+using Tand.Core.Api;
 using Tand.Core.Models;
 
 namespace Tand.Core
@@ -22,10 +24,10 @@ namespace Tand.Core
             _targetCache = new ConcurrentDictionary<int, Type[]>();
         }
 
-        public Type ImplementationType { get; set; }
-        public T Decorated { private get; set; }
+        public Type ImplementationType { get; set; } = default!;
+        public T Decorated { private get; set; } = default!;
 
-        public IDependencyResolver DependencyResolver { get; set; }
+        public IDependencyResolver DependencyResolver { get; set; } = default!;
 
         protected override object Invoke(MethodInfo targetMethod, object[] args)
         {
@@ -33,7 +35,7 @@ namespace Tand.Core
             var targets = TargetTypesForMethod(targetMethod);
             
             ProcessOnEntering(targets, new CallEnterContext<T>(Decorated, mappedMethodArgs));
-
+            
             var result = targetMethod.Invoke(Decorated, args);
             
             ProcessOnLeaving(targets, new CallLeaveContext<T>(Decorated, mappedMethodArgs, result));
@@ -104,7 +106,8 @@ namespace Tand.Core
 
             return _targetCache[hash]
                 .Select(type => DependencyResolver.TargetOfType<T>(type))
-                .ToList();
+                .Where(target => target != null)
+                .ToList()!;
         }
     }
 }

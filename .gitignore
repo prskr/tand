@@ -3,8 +3,11 @@
 ###############
 /**/DROP/
 /**/TEMP/
+**/.tmp/
 /**/packages/
 /**/bin/
 /**/obj/
 _site
 .idea/
+*.Artifacts/
+**/artifacts/

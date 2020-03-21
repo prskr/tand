@@ -1,6 +1,7 @@
 using System;
 using Microsoft.Extensions.DependencyInjection;
 using Tand.Core;
+using Tand.Core.Api;
 using Tand.Core.Models;
 using Xunit;
 
