@@ -15,7 +15,7 @@ using static _build.benchmarks.DotNetBenchmarkExtensions;
 [GitHubActions(
         "dotnet",
         GitHubActionsImage.UbuntuLatest,
-        AutoGenerate = true,
+        AutoGenerate = false,
         On = new []{GitHubActionsTrigger.Push, GitHubActionsTrigger.PullRequest}
     )
 ]
