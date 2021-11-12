@@ -23,6 +23,6 @@ jobs:
     name: ubuntu-latest
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Run './test/build.sh'
         run: ./test/build.sh 
